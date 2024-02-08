@@ -37,8 +37,8 @@ This project implements a RESTful API for managing tasks, powered by Node.js, Ex
 | `/tasks`             | POST   | Creates a new task with provided title, description, and priority level. |
 | `/tasks/:id`          | PUT    | Updates an existing task based on its ID with new data.    |
 | `/tasks/:id`          | DELETE | Removes a specific task from the database permanently.     |
-| `/tasks/filter?completed=:status` | GET    | Filters tasks based on their completion status (`true` or `false`). |
-| `/tasks/sort?by=createdAt` | GET    | Sorts tasks in ascending order by their creation date.      |
+| `/tasks?completed=:status` | GET    | Filters tasks based on their completion status (`true` or `false`). |
+| `/tasks?sortby=createdAt` | GET    | Sorts tasks in ascending order by their creation date.      |
 | `/tasks/priority/:level` | GET    | Retrieves tasks assigned with a specific priority level (low, medium, high). |
 
 ## Example Usage
