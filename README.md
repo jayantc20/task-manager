@@ -23,10 +23,9 @@ This project implements a RESTful API for managing tasks, powered by Node.js, Ex
 
 **Instructions:**
 
-1. Clone the repository: `git clone [https://github.com/your-username/task-manager-api.git](https://github.com/your-username/task-manager-api.git)`
+1. Clone the repository: `git clone [https://github.com/jayantc20/task-manager.git]([https://github.com/your-username/task-manager-api.git](https://github.com/jayantc20/task-manager.git))`
 2. Install dependencies: `npm install` (or `yarn install`)
-3. Configure MongoDB connection (refer to project documentation)
-4. Start the server: `node server.js`
+4. Start the server: `npm run dev`
 5. Test the API using Postman or a similar tool
 
 ## API Endpoints
