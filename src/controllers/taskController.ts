@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { Task, tasks } from '../models/taskModel';
 
+//TODO: Add pagination
 export const getAllTasks = (req: Request, res: Response) => {
   let filteredTasks = [...tasks];
 
@@ -88,6 +89,8 @@ export const deleteTask = (req: Request, res: Response) => {
 
   if (taskIndex !== -1) {
     tasks.splice(taskIndex, 1);
+    //TODO: Confirm
+    // res.status(204).json();
     res.json({ message: 'Task deleted successfully' });
   } else {
     res.status(404).json({ message: 'Task not found' });

@@ -44,16 +44,16 @@ This project implements a RESTful API for managing tasks, powered by Node.js, Ex
 ## Example Usage
 
 // Get all tasks:
-curl http://localhost:3000/tasks
+curl http://localhost:3000/api/v1/tasks
 
 // Create a new task:
-curl -X POST http://localhost:3000/tasks -H "Content-Type: application/json" -d '{ "title": "Set up environment"", "description": "Install Node.js, npm, and git", "completed": false, "priority": "low" }'
+curl -X POST http://localhost:3000/api/v1/tasks -H "Content-Type: application/json" -d '{ "title": "Set up environment"", "description": "Install Node.js, npm, and git", "completed": false, "priority": "low" }'
 
 // Update a task:
-curl -X PUT http://localhost:3000/tasks/1 -H "Content-Type: application/json" -d '{ "title": "Set up environment"", "description": "Install Node.js, npm, and git", "completed": true, "priority": "low" }'
+curl -X PUT http://localhost:3000/api/v1/tasks/1 -H "Content-Type: application/json" -d '{ "title": "Set up environment"", "description": "Install Node.js, npm, and git", "completed": true, "priority": "low" }'
 
 // Get tasks by priority:
-curl http://localhost:3000/tasks/priority/high
+curl http://localhost:3000/api/v1/tasks/priority/high
 
 ## Contributing
 
