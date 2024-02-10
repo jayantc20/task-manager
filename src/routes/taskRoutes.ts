@@ -1,8 +1,9 @@
 import { Router, Request, Response } from 'express';
 import { 
-  // sanitizeInputsForCreate, 
-  // sanitizeInputsForUpdate 
-  sanitizeInputs
+  sanitizeInputsForCreate, 
+  sanitizeInputsForUpdate,
+  sanitizePriorityParam
+  // sanitizeInputs
 } from '../middleware/taskSanatizationMiddleware';
 
 import {
@@ -18,9 +19,9 @@ const router: Router = Router();
 
 router.get('/', getAllTasks);
 router.get('/:id', getTaskById);
-router.post('/', sanitizeInputs(), createTask);
-router.put('/:id', sanitizeInputs(), updateTask);
+router.post('/', sanitizeInputsForCreate(), createTask); // sanitizeInputs()
+router.put('/:id', sanitizeInputsForUpdate(), updateTask); // sanitizeInputs()
 router.delete('/:id', deleteTask);
-router.get('/priority/:level', getTasksByPriority);
+router.get('/priority/:level', sanitizePriorityParam(), getTasksByPriority);
 
 export default router;

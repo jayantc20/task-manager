@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTasksByPriority = exports.deleteTask = exports.updateTask = exports.createTask = exports.getTaskById = exports.getAllTasks = void 0;
 const taskModel_1 = require("../models/taskModel");
+//TODO: Add pagination
 const getAllTasks = (req, res) => {
     let filteredTasks = [...taskModel_1.tasks];
     const { completed, sortBy } = req.query;
@@ -62,7 +63,7 @@ const updateTask = (req, res) => {
             createdAt: existingTask.createdAt,
         };
         taskModel_1.tasks[taskIndex] = updatedTask;
-        res.json(updatedTask);
+        res.status(200).json(updatedTask);
     }
     else {
         res.status(404).json({ message: 'Task not found' });
@@ -74,6 +75,8 @@ const deleteTask = (req, res) => {
     const taskIndex = taskModel_1.tasks.findIndex((t) => t.id === taskId);
     if (taskIndex !== -1) {
         taskModel_1.tasks.splice(taskIndex, 1);
+        //TODO: Confirm
+        // res.status(204).json();
         res.json({ message: 'Task deleted successfully' });
     }
     else {
@@ -84,7 +87,11 @@ exports.deleteTask = deleteTask;
 const getTasksByPriority = (req, res) => {
     const priorityLevel = req.params.level.toLowerCase();
     const filteredTasks = taskModel_1.tasks.filter((task) => task.priority.toLowerCase() === priorityLevel);
-    res.json(filteredTasks);
+    if (filteredTasks.length === 0) {
+        // No tasks found, return 404
+        return res.status(404).json({ message: 'No tasks found with the specified priority level' });
+    }
+    res.status(200).json(filteredTasks);
 };
 exports.getTasksByPriority = getTasksByPriority;
 // // Filtering

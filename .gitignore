@@ -9,8 +9,11 @@ build/
 out/
 
 # Testing
-coverage/
-test/
+# coverage/
+# test/
+
+# Ignore the .tap folder
+.tap/
 
 # IDE files
 .vscode/

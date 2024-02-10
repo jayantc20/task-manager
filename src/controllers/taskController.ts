@@ -75,7 +75,7 @@ export const updateTask = (req: Request, res: Response) => {
     };
 
     tasks[taskIndex] = updatedTask;
-    res.json(updatedTask);
+    res.status(200).json(updatedTask);
 
   } else {
     res.status(404).json({ message: 'Task not found' });
@@ -101,7 +101,12 @@ export const getTasksByPriority = (req: Request, res: Response) => {
   const priorityLevel = req.params.level.toLowerCase();
   const filteredTasks = tasks.filter((task) => task.priority.toLowerCase() === priorityLevel);
 
-  res.json(filteredTasks);
+  if (filteredTasks.length === 0) {
+    // No tasks found, return 404
+    return res.status(404).json({ message: 'No tasks found with the specified priority level' });
+  }
+
+  res.status(200).json(filteredTasks);
 };
 
 
