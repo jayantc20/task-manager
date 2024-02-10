@@ -9,10 +9,10 @@ This project implements a RESTful API for managing tasks, powered by Node.js, Ex
     * Title and description cannot be empty.
     * Completion status must be a valid boolean value (true/false).
     * Priority level (optional) must be one of "low", "medium", or "high".
-* **Granular Filtering:** Efficiently find specific tasks based on completion status using `/tasks?completed=:status` (where status is `true` or `false`).
-* **Dynamic Sorting:** Effortlessly organize tasks by their creation date in ascending order using `/tasks?sortby=createdAt`.
+* **Filtering:** Efficiently find specific tasks based on completion status using `/tasks?completed=:status` (where status is `true` or `false`).
+* **Sorting:** Effortlessly organize tasks by their creation date in ascending order using `/tasks?sortby=createdAt`.
 * **Clear Prioritization:** Assign and retrieve tasks based on defined priority levels (low, medium, high) through `/tasks/priority/:level`.
-* **Thorough Testing:** Use Postman or similar tools to send requests and verify correct operation across all API endpoints.
+* **Testing:** Use Postman or similar tools to send requests and verify correct operation across all API endpoints.
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ This project implements a RESTful API for managing tasks, powered by Node.js, Ex
 1. Clone the repository: `git clone [https://github.com/jayantc20/task-manager.git]([https://github.com/your-username/task-manager-api.git](https://github.com/jayantc20/task-manager.git))`
 2. Install dependencies: `npm install` (or `yarn install`)
 4. Start the server: `npm run dev`
-5. Test the API using Postman or a similar tool
+5. Test the API using Postman or a similar tool or npm run test
 
 ## API Endpoints
 
