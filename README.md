@@ -55,6 +55,18 @@ curl -X PUT http://localhost:3000/api/v1/tasks/1 -H "Content-Type: application/j
 // Get tasks by priority:
 curl http://localhost:3000/api/v1/tasks/priority/high
 
+## Postman Collection
+
+You can import and test the APIs using the [Postman Collection](https://github.com/jayantc20/task-manager/blob/main/Task-Manager.postman_collection.json).
+
+### Importing the Collection in Postman
+
+1. [Download the Postman Collection File](https://github.com/jayantc20/task-manager/blob/main/Task-Manager.postman_collection.json).
+2. Open Postman.
+3. Click on "Import" at the top-left corner.
+4. Choose the downloaded collection file.
+5. The collection should now be available in your Postman workspace.
+
 ## Contributing
 
 ## License
